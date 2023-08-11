@@ -15,12 +15,14 @@ public class SearchController {
 
     @RequestMapping("/search")
     public RedirectView search(@RequestParam("query") String query){
-
         RedirectView redirectView = new RedirectView();
         String url = "https://www.google.com/search?q=" + query;
 
-        if (query.length() == 0)  redirectView.setUrl("redirect:/home");
-        else  redirectView.setUrl(url);
+        if (query.length() == 0)  
+            redirectView.setUrl("redirect:/home");
+        else  
+            redirectView.setUrl(url);
+        
         return redirectView;
     }
 }
